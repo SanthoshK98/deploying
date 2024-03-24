@@ -5,8 +5,11 @@ const port = 5888;
 
 app.use(express.json())
 
-app.get('/dummies', (req,res)=>{
+app.get('/', (req,res)=>{
     return res.json({message:'Hello world'})
+})
+app.get('/dummy', (req,res)=>{
+    return res.json({message:'Hello world Dummy'})
 })
 
 
