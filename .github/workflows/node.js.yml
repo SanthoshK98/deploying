@@ -30,8 +30,10 @@ jobs:
         aws-region: ap-south-1
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+        
         
         
     - run: cd app && npm ci
     - run: zip  -r publish.zip  ./app/*
-    - run: aws lambda update-function-code  --function-name =express-ExpressFunctionRole-h18Ay0X6AjcD  --zip-file:fileb://publish.zip
+    - run: aws lambda update-function-code  --function-name =express-ExpressFunctionRole-h18Ay0X6AjcD  --zip-file=fileb://publish.zip
