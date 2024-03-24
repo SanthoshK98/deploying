@@ -8,7 +8,7 @@ app.use(express.json())
 app.get('/', (req,res)=>{
     return res.json({message:'Hello world'})
 })
-app.get('/dummies', (req,res)=>{
+app.get('/dummy', (req,res)=>{
     return res.json({message:'Hello world Dummy'})
 })
 
