@@ -36,4 +36,4 @@ jobs:
         
     - run: cd app && npm ci
     - run: zip  -r publish.zip  ./app/*
-    - run: aws lambda update-function-code  --function-name =express-ExpressFunctionRole-h18Ay0X6AjcD  --zip-file=fileb://publish.zip
+    - run: aws lambda update-function-code  --function-name =express-ExpressFunction-1b0xw4wg0hoL  --zip-file=fileb://publish.zip
