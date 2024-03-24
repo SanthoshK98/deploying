@@ -23,7 +23,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+
+    - name: Configure AWS Credentials 2
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-region: us-east-2
+        aws-access-key-id: ${{ steps.creds.outputs.aws-access-key-id }}
+        aws-secret-access-key: ${{ steps.creds.outputs.aws-secret-access-key }}
+        
         
     - run: cd app && npm ci
     - run: zip  -r publish.zip  ./app/*
-    - run: aws lamda update-function-code  --function-name =express-ExpressFunction-1b0xw4wg0hoL
+    - run: aws lamda update-function-code  --function-name =express-ExpressFunctionRole-h18Ay0X6AjcD  --zip-file:fileb://publish.zip
