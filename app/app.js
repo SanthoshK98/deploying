@@ -6,7 +6,7 @@ const port = 5888;
 app.use(express.json())
 
 app.get('/', (req,res)=>{
-    return res.json({message:'Hello world I am back'})
+    return res.json({message:'Hello world I am back to safety'})
 })
 app.get('/dummy', (req,res)=>{
     return res.json({message:'Hello world Dummy'})
